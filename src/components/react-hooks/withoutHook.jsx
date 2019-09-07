@@ -7,12 +7,20 @@ export default class Greetings extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-            name: 'Rumancha using no hooks',
-            surname: 'Rumancha Surname using no hooks',
+            name: 'Ruman',
+            surname: 'Dangol',
         }
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleSurnameChange = this.handleSurnameChange.bind(this);
     }   
+
+    componentDidMount(){
+        document.title = this.state.name + ' '+ this.state.surname+'[NH]';
+    }
+
+    componentDidUpdate(){
+        document.title = this.state.name + ' '+ this.state.surname+'[NH]';
+    }
 
     handleNameChange(e){
         this.setState({
